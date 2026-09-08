@@ -1,0 +1,2 @@
+docker buildx build . --tag codeberg.org/caffeinatedope/blog:latest
+docker push codeberg.org/caffeinatedope/blog:latest
