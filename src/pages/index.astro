@@ -1,89 +1,114 @@
 ---
 import Layout from "../layouts/default.astro";
-import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
+import pfp from "../assets/pfp.png";
 
-const posts = (await getCollection("blog")).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-).slice(0, 3);
-const projects = (await getCollection("projects")).sort(
-	(a, b) => b.data.sort.valueOf() - a.data.sort.valueOf(),
-).slice(0, 3);
+const traits: string[] = [
+	"trans",
+	"programmer",
+	"technomancer",
+	"sysadmin",
+	"linux user",
+	"rfid geek",
+	"cyborg",
+	"foxgirl",
+	"weeb",
+	"vrchatter",
+	"container user",
+	"libre lover",
+	"software dev",
+	"hardware thrasher",
+	"pentester",
+	"smart homer",
+	"paranoid",
+	"tarot reader",
+	"superstitious",
+	"recovering kubernetes user",
+	"cyberpunk",
+	"schizo",
+	"guitarist",
+	"ripperdoc",
+	"indecisive",
+	"jackass of all trades",
+];
+
+function shuffle(array: string[]) {
+	let currentIndex = array.length;
+
+	// While there remain elements to shuffle...
+	while (currentIndex != 0) {
+		// Pick a remaining element...
+		let randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex--;
+
+		// And swap it with the current element.
+		[array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+	}
+}
+
+shuffle(traits);
+console.log(traits);
 ---
 
-<title>Homepage</title>
 <Layout>
-	<div class="flex flex-row flex-wrap align-center w-full">
-		<div class="lg:w-1/2 w-full max-content">
-			<div class="p-4 flex items-center justify-center">
-				<h1 class="text-4xl bg-ctp-mantle p-4 rounded-2xl">Latest Projects</h1>
-			</div>
-			<div
-				class="flex flex-row flex-wrap items-center justify-center text-l gap-4 p-4"
-			>
-				{
-					
-					projects.map((project) => (
-							<a
-								href={`/projects/${project.id}`}
-								class="p-4 flex lg:flex-row flex-1 max-w-130 basis-full flex-col bg-ctp-mantle rounded-2xl items-center"
-							>
-								<div class="flex flex-col flex-wrap items-center justify-center text-l p-4 flex-3">
-									<div class="text-2xl p-4 text-center">{project.data.title}</div>
-									<div class="text-center">{project.data.description}</div>
-								</div>
-								<div class="min-w-32 aspect-3/2 flex-2 max-w-130">
-									<Image
-										src={project.data.thumbnail_light}
-										class="dark:hidden inline object-contain aspect-3/2"
-										alt="project image"
-									/>
-									<Image
-										src={project.data.thumbnail_dark}
-										class="dark:inline hidden object-contain aspect-3/2"
-										alt="project image"
-									/>
-								</div>
-							</a>
-					))
-				}
-			</div>
+	<div class="flex flex-col flex-wrap w-full items-center gap-8 p-8">
+		<div class="flex items-center content-center w-32">
+			<Image src={pfp} alt="CaffeinatedOpe's pfp" class="object-contain border-2 border-fg p-1" />
 		</div>
-		<div class="lg:w-1/2 w-full max-content">
-			<div class="p-4 flex items-center justify-center">
-				<h1 class="text-4xl bg-ctp-mantle p-4 rounded-2xl">Latest Blogs</h1>
+		<div class="text-3xl border-2 border-fg p-">Hi. I'm CaffeinatedOpe.</div>
+		<div class="border-2 border-fg p-4">
+			<h2 class="text-xl">caffeinated (ˈka-fə-ˌnā-təd)</h2>
+			<ol class="list-decimal list-inside indent-8">
+				<li>stimulated by or as if by caffeine</li>
+			</ol>
+			<h2 class="text-xl">ope (ˈōp)</h2>
+			<ol class="list-decimal list-inside indent-8">
+				<li>an exclamation of surprise</li>
+			</ol>
+		</div>
+		<div class="text-lg">or lucy, to those who know me. I'm the kind of nerd that's hard to label, unless you're picking multiple.</div>
+		<div class="text-md border-2 border-fg p-4 text-center">
+			{traits.map((trait) => <p>{trait},</p>)}
+			<p>and many more.</p>
+		</div>
+		<div class="text-lg">
+			I've had many projects, and try to keep track of what I can. Unfortuntely, this page serves as more of a devlog than an archive, as most get lost to time,
+			with not a thought given to documentation. Should you want to read them, you've already skimmed past the place to do so. Alongside them are my blogs.
+			Sometimes related in topic, often not. While I doubt they're of much interest to anyone, I hope that someone can read through them and find a solution, or
+			at least feel a little less alone. While the subjects I take interest in are vast and often unrelated, all work here is my own. Generative AI takes no
+			hand in my work, nor should it. Want to get into contact with me? I question your judgement, but there's a few ways to do that.
+		</div>
+		<div class="border-2 border-fg p-1">
+			<div>
+				<br />
+				<h2 class="text-2xl leading-8">Most secure:</h2>
+				<ol class="list-disc list-inside indent-8 text-xl leading-10">
+					<li>
+						<a class="underline" href='https://signal.me/#eu/7RDXK_4R6-jBfTNJ52ixBl03ujeTC7BFOG7XQnkTvQlYrHlvxs1A5q4XZE0A_wCB"'>Signal: caffeinatedope.777</a>
+					</li>
+				</ol>
 			</div>
-			<div
-				class="flex flex-row flex-wrap items-center justify-center text-l gap-4 p-4"
-			>
-				{
-					posts.map((post) => (
-						<a
-							href={`/blog/${post.id}`}
-							class="p-4 flex lg:flex-row flex-1 max-w-130 basis-full flex-col bg-ctp-mantle rounded-2xl items-center"
-						>
-							<div class="flex flex-col flex-wrap items-center justify-center text-l p-4 flex-3">
-								<div class="text-2xl p-4 text-center">
-									{post.data.pubDate.toLocaleDateString("en-US")}:{" "}
-									{post.data.title}
-								</div>
-								<div class="text-center">{post.data.description}</div>
-							</div>
-							<div class="min-w-32 aspect-3/2 flex-2 max-w-100%">
-								<Image
-									src={post.data.thumbnail_light}
-									class="dark:hidden inline object-contain aspect-3/2"
-									alt="blogpost image"
-								/>
-								<Image
-									src={post.data.thumbnail_dark}
-									class="dark:inline hidden object-contain aspect-3/2"
-									alt="blogpost image"
-								/>
-							</div>
-						</a>
-					))
-				}
+			<br />
+			<div>
+				<h2 class="text-2xl leading-8">Least secure:</h2>
+				<ol class="list-disc list-inside indent-8 text-xl leading-8">
+					<li>Email: <a href="mailto:caffeinatedope@caffeinatedope.net" class="underline">caffeinatedope@caffeinatedope.net</a></li>
+					<li>Bluesky: <a href="https://bsky.app/profile/caffeinatedope.net" class="underline">@caffeinatedope.net</a></li>
+					<li>Mastodon: <a rel="me" href="https://mastodon.social/@CaffeinatedOpe" class="underline">@CaffeinatedOpe@mastodon.social</a></li>
+				</ol>
+			</div>
+			<br />
+			<br />
+			<div>
+				<h2 class="text-2xl leading-8">Nonsocial media</h2>
+				<ol class="list-disc list-inside indent-8 text-xl leading-8">
+					<li><a href="https://codeberg.org/CaffeinatedOpe" class="underline">Codeberg</a></li>
+					<li>
+						<div class="inline">
+							<a rel="me" href="https://github.com/CaffeinatedOpe" class="underline inline">Github</a> <p class="text-fg text-sm inline">ARCHIVE</p>
+						</div>
+					</li>
+				</ol>
 			</div>
 		</div>
 	</div>

@@ -1,7 +1,13 @@
 @import "tailwindcss";
-@import "@catppuccin/tailwindcss/mocha.css";
 @plugin "@tailwindcss/typography";
 @config "./tailwind.config.js";
+
+@theme {
+	--color-*: initial;
+	--color-bg: #170024;
+	--color-fg: #5c0090;
+	--color-text: #b057f9;
+}
 
 body {
 	margin: 0%;
