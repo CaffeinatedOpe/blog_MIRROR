@@ -1,3 +1,2 @@
-fix awesome list
 integrate webring
 add friends sites? idk
