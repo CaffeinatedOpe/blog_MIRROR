@@ -19,7 +19,7 @@ like publicized bookmarks i guess
 ## Other
 ### not quite software? but not just a github, either
 * [Catppuccin](https://catppuccin.com/)
-	* Beautiful color scheme, I use it on everything. Including my blog!
+	* Beautiful color scheme, I use it on everything.
 * [amazing-qr](https://github.com/x-hw/amazing-qr)
 
 ## Repos
@@ -34,3 +34,6 @@ like publicized bookmarks i guess
 * [ooo.eeeee.ooo](https://ooo.eeeee.ooo/)
 * [kate's 88x31 button archive](https://88x31.kate.pet/)
 * [88x31 Collection](https://88x31.nl/index.html)
+* [The Dangerous Things Forum](https://forum.dangerousthings.com/) my beloved
+* [vrcdn](https://vrcdn.live/)
+	* love these guys! been friends with a good number of djs that love it too
