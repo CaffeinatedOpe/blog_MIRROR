@@ -1,14 +1,16 @@
 ---
 import Layout from "../layouts/default.astro";
-import Prose from '../components/Prose.astro';
+import Prose from "../components/Prose.astro";
 
-import Content from "../data/awesome.md"
+import Content from "../data/awesome.md";
 ---
 
 <title>Awesome</title>
 
 <Layout>
-	<Prose>
-		<Content/>
+	<Prose
+		><div class="bg-bg text-text prose-headings:text-text prose-a:text-text">
+			<Content />
+		</div>
 	</Prose>
 </Layout>
