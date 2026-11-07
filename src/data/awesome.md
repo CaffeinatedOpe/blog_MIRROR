@@ -16,6 +16,12 @@ like publicized bookmarks i guess
 * [decent samples](https://www.decentsamples.com/)
 	* A mix of paid and free audio plugins, with an open source engine, and works on linux!
 
+## Graphical Tools
+* [Glyphatrix](https://glyphtrix.art/)
+	* Really cool ascii art generator thing, runs locally in a browser
+* [Dither Guy](https://github.com/manoelpiovesan/dither-guy)
+	* A tool I've allegedly used for cover art
+
 ## Other
 ### not quite software? but not just a github, either
 * [Catppuccin](https://catppuccin.com/)

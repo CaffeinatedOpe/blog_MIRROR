@@ -3,32 +3,24 @@ import Layout from "../../layouts/default.astro";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 
-const posts = (await getCollection("blog")).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <title>Blog</title>
 
 <Layout>
+	<meta property="og:title" content="CaffeinatedOpe's Blogs" />
+	<meta property="og:description" content="come hither and read!" />
+	<meta property="og:url" content="https://caffeinatedope.net" />
 	<div class="p-4 flex items-center justify-center">
 		<h1 class="text-4xl bg-ctp-mantle p-4 rounded-2xl">Blogs</h1>
 	</div>
-	<div
-		class="flex flex-col items-center justify-center text-lg gap-4"
-	>
+	<div class="flex flex-col items-center justify-center text-lg gap-4">
 		{
 			posts.map((post) => (
-				<a
-					href={`/blog/${post.id}`}
-					class="p-4 border flex flex-row"
-				>
+				<a href={`/blog/${post.id}`} class="p-4 border flex flex-row">
 					<div class="">
-						<Image
-							src={post.data.thumbnail_dark}
-							class="h-32 w-auto aspect-auto object-cover"
-							alt="blogpost image"
-						/>
+						<Image src={post.data.thumbnail_dark} class="h-32 w-auto aspect-auto object-cover" alt="blogpost image" />
 					</div>
 					<div class="flex flex-col flex-wrap items-center justify-center text-l p-4 flex-3">
 						<div class="text-2xl p-4 text-center">

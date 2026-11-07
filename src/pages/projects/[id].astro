@@ -26,6 +26,10 @@ const content = marked.parse(markdown);
 
 <Layout>
 	<a href={project.data.url}>Link to the repo</a>
+	<meta property="og:title" content={project.data.title} />
+	<meta property="og:description" content={project.data.description} />
+	<meta property="og:image" content={project.data.thumbnail_dark.src} />
+	<meta property="og:url" content="https://caffeinatedope.net" />
 	<Prose>
 		<article set:html={content} class="mx-4 prose-code:bg-fg prose-code:p-1 prose-code:rounded-lg prose-code:w-max bg-bg text-text prose-headings:text-text"/>
 	</Prose>
