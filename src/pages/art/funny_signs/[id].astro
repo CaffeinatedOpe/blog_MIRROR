@@ -1,0 +1,32 @@
+---
+import Layout from "../../../layouts/default.astro";
+
+import { getEntry, render } from "astro:content";
+// 1. Generate a new path for every collection entry
+const { id } = Astro.params;
+if (id === undefined) {
+	return Astro.redirect("/404");
+}
+// 2. Query for the entry directly using the request slug
+const sign = await getEntry("funny_signs", id);
+// 3. Redirect if the entry does not exist
+if (sign === undefined) {
+	return Astro.redirect("/404");
+}
+---
+
+<title>{sign.data.title}</title>
+
+<Layout>
+	<meta property="og:title" content={sign.data.title} />
+	<meta property="og:description" content={sign.data.description} />
+	<meta property="og:image" content={sign.data.url} />
+	<meta property="og:url" content="https://caffeinatedope.net" />
+	<div class="flex-col flex gap-4 items-center">
+		<div class="text-5xl border-2 border-fg p-4 w-min text-nowrap">{sign.data.title}</div>
+		<div class="p-4 border flex items-center flex-wrap justify-center text-lg gap-4">
+			<img src={sign.data.url} class="h-128 w-auto aspect-auto object-cover" alt={sign.data.title} title={sign.data.description} />
+		</div>
+		<div class="p-4 border flex text-lg">{sign.data.description}</div>
+	</div>
+</Layout>

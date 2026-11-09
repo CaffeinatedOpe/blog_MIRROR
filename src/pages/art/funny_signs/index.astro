@@ -1,0 +1,27 @@
+---
+import Layout from "../../../layouts/default.astro";
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
+const signs = await getCollection("funny_signs");
+---
+
+<Layout>
+	<meta property="og:title" content="CaffeinatedOpe's Art Stuff" />
+	<meta property="og:description" content="by the Coffee Fox herself" />
+	<meta property="og:url" content="https://caffeinatedope.net" />
+	<div class="flex flex-col flex-wrap w-full items-center gap-8 p-8">
+		<div class="text-3xl border-2 border-fg p-4">My Funny Signs</div>
+		<div class="flex items-center flex-wrap justify-center text-lg gap-4">
+			{
+				signs.map((sign) => (
+					<a href={`/art/funny_signs/${sign.id}`} target="_blank" rel="noopener noreferrer" class="p-4 border flex">
+						<div class="">
+							<img src={sign.data.url} class="h-64 w-auto aspect-auto object-cover" alt={sign.data.title} title={sign.data.description} />
+						</div>
+					</a>
+				))
+			}
+		</div>
+	</div>
+</Layout>

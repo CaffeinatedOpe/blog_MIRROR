@@ -35,5 +35,15 @@ const projects = defineCollection({
   }),
 });
 
+const funny_signs = defineCollection({
+  loader: file("src/data/funny_signs.json"),
+  schema: ({image}) => z.object({
+    id: z.string(),
+		title: z.string(),
+    url: z.string(),
+    description: z.string(),
+  }),
+});
+
 // 5. Export a single `collections` object to register your collection(s)
-export const collections = { blog, projects };
+export const collections = { blog, projects, funny_signs };
