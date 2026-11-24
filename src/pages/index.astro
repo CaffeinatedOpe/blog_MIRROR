@@ -71,7 +71,9 @@ console.log(traits);
 		</div>
 		<div class="text-lg">or lucy, to those who know me. I'm the kind of nerd that's hard to label, unless you're picking multiple.</div>
 		<div class="text-md border-2 border-fg p-4 text-center">
-			{traits.map((trait) => <p>{trait},</p>)}
+			{traits.map((trait) => (
+				<p>{trait},</p>
+			))}
 			<p>and many more.</p>
 		</div>
 		<div class="text-lg">
@@ -87,7 +89,9 @@ console.log(traits);
 				<h2 class="text-2xl leading-8">Most secure:</h2>
 				<ol class="list-disc list-inside indent-8 text-xl leading-10">
 					<li>
-						<a class="underline" href='https://signal.me/#eu/7RDXK_4R6-jBfTNJ52ixBl03ujeTC7BFOG7XQnkTvQlYrHlvxs1A5q4XZE0A_wCB"'>Signal: caffeinatedope.777</a>
+						<a class="underline" href='https://signal.me/#eu/7RDXK_4R6-jBfTNJ52ixBl03ujeTC7BFOG7XQnkTvQlYrHlvxs1A5q4XZE0A_wCB"'>
+							Signal: caffeinatedope.777
+						</a>
 					</li>
 				</ol>
 			</div>
@@ -95,20 +99,53 @@ console.log(traits);
 			<div>
 				<h2 class="text-2xl leading-8">Least secure:</h2>
 				<ol class="list-disc list-inside indent-8 text-xl leading-8">
-					<li>Email: <a href="mailto:caffeinatedope@caffeinatedope.net" class="underline">caffeinatedope@caffeinatedope.net</a></li>
-					<li>Bluesky: <a href="https://bsky.app/profile/caffeinatedope.net" class="underline">@caffeinatedope.net</a></li>
-					<li>Mastodon: <a rel="me" href="https://mastodon.social/@CaffeinatedOpe" class="underline">@CaffeinatedOpe@mastodon.social</a></li>
+					<li>
+						Email:{" "}
+						<a href="mailto:caffeinatedope@caffeinatedope.net" class="underline">
+							caffeinatedope@caffeinatedope.net
+						</a>
+					</li>
+					<li>
+						Bluesky:{" "}
+						<a href="https://bsky.app/profile/caffeinatedope.net" class="underline">
+							@caffeinatedope.net
+						</a>
+					</li>
+					<li>
+						Mastodon:{" "}
+						<a rel="me" href="https://mastodon.social/@CaffeinatedOpe" class="underline">
+							@CaffeinatedOpe@mastodon.social
+						</a>
+					</li>
 				</ol>
 			</div>
 			<br />
+			<div>
+				<h2 class="text-2xl leading-8">My discord server!</h2>
+				<ol class="list-disc list-inside indent-8 text-xl leading-8">
+					<li>
+						<a href="https://discord.gg/ZjW8Mb4p7g" class="underline">
+							Lucy's Foxhole
+						</a>
+					</li>
+					<p class="text-sm">(my username is "caffeinatedope", there's only one me)</p>
+				</ol>
+			</div>
 			<br />
 			<div>
 				<h2 class="text-2xl leading-8">Nonsocial media</h2>
 				<ol class="list-disc list-inside indent-8 text-xl leading-8">
-					<li><a href="https://codeberg.org/CaffeinatedOpe" class="underline">Codeberg</a></li>
+					<li>
+						<a href="https://codeberg.org/CaffeinatedOpe" class="underline">
+							Codeberg
+						</a>
+					</li>
 					<li>
 						<div class="inline">
-							<a rel="me" href="https://github.com/CaffeinatedOpe" class="underline inline">Github</a> <p class="text-fg text-sm inline">ARCHIVE</p>
+							<a rel="me" href="https://github.com/CaffeinatedOpe" class="underline inline">
+								Github
+							</a>
+							<p class="text-fg text-sm inline">ARCHIVE</p>
 						</div>
 					</li>
 				</ol>
