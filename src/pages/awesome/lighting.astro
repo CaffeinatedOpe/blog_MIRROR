@@ -1,0 +1,28 @@
+---
+import Layout from "../../layouts/default.astro";
+---
+
+<Layout>
+	<a href="/awesome" class="w-full text-center underline">back to main list</a>
+	<div class="text-3xl w-full text-center p-4">Cool Lighting and Show Control Stuff</div>
+	<div class="flex flex-wrap w-full items-center gap-8 p-4 justify-center">
+		<div class="border-2 border-fg flex-col items-center text-center gap-4 p-4 max-w-md">
+			<a href="https://kno.wled.ge" class="text-2xl p-4">
+				WLED
+			</a>
+			<div class="text-md">A firmware for esp32 devices to control addressable leds, which happens to be absolutely awesome. I've used it for quite a few projects (might share eventually), and haven't had many complaints.</div>
+		</div>
+		<div class="border-2 border-fg flex-col items-center text-center gap-4 p-4 max-w-md">
+			<a href="https://xlights.org/" class="text-2xl p-4">
+				xLights
+			</a>
+			<div class="text-md">Awesome for making pre-programmed mapped lightshows. A bit finnicky, limited effects, looks pretty old fashoned, but it integrates well with WLED, and makes it easy to make some cool animations.</div>
+		</div>
+		<div class="border-2 border-fg flex-col items-center text-center gap-4 p-4 max-w-md">
+			<a href="https://github.com/LedFx/LedFx" class="text-2xl p-4">
+				LedFx
+			</a>
+			<div class="text-md">a bit janky sometimes, but works pretty well for just throwing on music and lights.</div>
+		</div>
+	</div>
+</Layout>
